@@ -49,7 +49,7 @@ const VideoSection = () => {
           onClick={handlePlayClick}
           className="absolute inset-0 flex items-center justify-center bg-black/50 text-white text-2xl font-semibold rounded-lg"
         >
-          ▶ Play with Sound
+          ▶ Play 
         </button>
       )}
     </div>

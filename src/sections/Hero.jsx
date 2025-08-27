@@ -1,5 +1,4 @@
-'use client';
-
+"use client"
 // import Image from 'next.js/image';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -7,69 +6,89 @@ import Image from 'next/image';
 
 const Hero = () => {
   const glowRef = useRef(null);
-  const baseHeadingRef = useRef(null);
-  const letterRefs = useRef([]);
+  const letterLine1Refs = useRef([]);
+  const letterLine2Refs = useRef([]);
   const paraRef = useRef(null);
 
-  const headingText = 'FOODIE';
+  const headingLine1 = 'Your Personal';
+  const headingLine2 = 'Food Guide';
 
   useEffect(() => {
-    letterRefs.current = letterRefs.current.slice(0, headingText.length);
+    // Ensure refs arrays have correct length
+    letterLine1Refs.current = letterLine1Refs.current.slice(0, headingLine1.length);
+    letterLine2Refs.current = letterLine2Refs.current.slice(0, headingLine2.length);
 
-    // Initial state
-    gsap.set(glowRef.current, { opacity: 0, scale: 0.85 });
-    gsap.set(paraRef.current, { opacity: 0, y: 24 });
-    gsap.set(baseHeadingRef.current, { opacity: 0 });
+    // Filter out null refs to avoid GSAP errors
+    const validLine1Refs = letterLine1Refs.current.filter(ref => ref !== null);
+    const validLine2Refs = letterLine2Refs.current.filter(ref => ref !== null);
 
-    gsap.set(letterRefs.current, {
-      color: 'white',
-      WebkitTextFillColor: 'white',
-      backgroundImage: 'none',
-      willChange: 'color, background-position',
-      opacity: 1,
+    // Only proceed if we have valid refs
+    if (validLine1Refs.length === 0 || validLine2Refs.length === 0) {
+      console.warn('Some letter refs are null, animation may not work properly');
+      return;
+    }
+
+    // Initial state - make sure all elements exist before animating
+    if (glowRef.current) {
+      gsap.set(glowRef.current, { opacity: 0, scale: 0.85 });
+    }
+    
+    if (paraRef.current) {
+      gsap.set(paraRef.current, { opacity: 0, y: 24 });
+    }
+    
+    // Hide all letters initially
+    gsap.set([...validLine1Refs, ...validLine2Refs], {
+      opacity: 0,
+      y: 20,
     });
 
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-    // 1) Bulb glow faster
-    tl.to(glowRef.current, { opacity: 0.55, scale: 1, duration: 1.2 });
+    // 1) Glow appears
+    if (glowRef.current) {
+      tl.to(glowRef.current, { opacity: 0.55, scale: 1, duration: 1.2 });
+    }
 
-    // 2) White FOODIE fade in faster
-    tl.to(baseHeadingRef.current, { opacity: 1, duration: 0.6 }, '-=0.2');
-
-    // 3) Switch to gradient
-    tl.set(letterRefs.current, {
-      backgroundImage: 'linear-gradient(90deg,#FACC15,#FB923C,#EA580C)',
-      backgroundSize: '300% 100%',
-      backgroundPositionX: '-200%',
-      WebkitBackgroundClip: 'text',
-      backgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      color: 'transparent',
-    });
-
-    // 4) Gradient sweep faster
+    // 2) Typing animation for first line
     tl.to(
-      letterRefs.current,
+      validLine1Refs,
       {
-        backgroundPositionX: '0%',
-        duration: 0.55,
-        stagger: 0.1,
+        opacity: 1,
+        y: 0,
+        duration: 0.05,
+        stagger: 0.06,
       },
-      '+=0.15'
+      '-=0.5'
     );
 
-    // 5) Fade out white base quickly
-    tl.to(baseHeadingRef.current, { opacity: 0, duration: 0.3 }, '-=0.25');
+    // 3) Typing animation for second line
+    tl.to(
+      validLine2Refs,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.05,
+        stagger: 0.06,
+      },
+      '+=0.2'
+    );
 
-    // 6) Paragraph fade + slide up
-    tl.to(paraRef.current, { opacity: 1, y: 0, duration: 0.7 }, '-=0.05');
-  }, []);
+    // 4) Paragraph fade + slide up (if paragraph exists)
+    if (paraRef.current) {
+      tl.to(paraRef.current, { opacity: 1, y: 0, duration: 0.7 }, '+=0.3');
+    }
+
+    // Cleanup function
+    return () => {
+      tl.kill();
+    };
+  }, []); // Remove dependencies to avoid re-running
 
   return (
-    <section className="w-screen h-[70vh]  md:h-screen flex flex-col  items-center relative overflow-hidden">
+    <section className="w-screen h-[70vh] md:h-screen flex flex-col items-center relative overflow-hidden">
       {/* Top bar */}
-      <div className="flex  w-full justify-between items-center p-4">
+      <div className="flex w-full justify-between items-center p-4">
         <Image src="/logo.jpg" width={70} height={70} alt="logo" />
         <button className="px-5 py-2 bg-white rounded-full text-black text-sx">
           Try Free
@@ -77,64 +96,60 @@ const Hero = () => {
       </div>
 
       {/* Center Content */}
-      <div className="flex h-full   justify-center mt-20 flex-col items-center w-fit relative">
-        {/* Glow behind heading */}
+      <div className="flex h-full justify-center mt-10 md:mt-20 flex-col items-center w-fit relative">
+        {/* Glow behind heading - changed to yellow */}
         <div
           ref={glowRef}
-          className="absolute top-0 md:top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-1/2 
-             w-[40vw] h-[40vw] bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-600 
+          className="absolute top-8 md:top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-1/2 
+             w-[60vw] md:w-[40vw] h-[60vw] md:h-[40vw] bg-orange-400
              rounded-full blur-[150px] opacity-50 z-0"
         />
 
         {/* Heading container */}
-        <div className="relative z-10 leading-none">
-          {/* Base white heading */}
-          <h1
-            ref={baseHeadingRef}
-            className="text-[20vw] vodka-font sm:text-[13vw] font-bold text-white select-none"
-          >
-            {headingText}
-          </h1>
-
-          {/* Gradient overlay heading */}
-          <h1
-            aria-hidden
-            className="pointer-events-none absolute inset-0 flex font-bold text-[20vw] sm:text-[13vw] leading-none"
-          >
-            {headingText.split('').map((char, i) => (
+        <div className="relative z-10 leading-none text-center">
+          {/* First Line - changed to yellow */}
+          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-yellow-400 select-none flex justify-center">
+            {headingLine1.split('').map((char, i) => (
               <span
-                key={i}
-                ref={(el) => (letterRefs.current[i] = el)}
-                className="inline-block [-webkit-text-fill-color:transparent] vodka-font bg-clip-text"
+                key={`line1-${i}`}
+                ref={(el) => {
+                  if (el) letterLine1Refs.current[i] = el;
+                }}
+                className="inline-block"
                 style={{ lineHeight: 1 }}
               >
-                {char}
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
+          </h1>
+
+          {/* Second Line - changed to yellow */}
+          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-yellow-400 select-none -mt-2 md:-mt-4 flex justify-center">
+            {headingLine2.split('').map((char, i) => (
+              <span
+                key={`line2-${i}`}
+                ref={(el) => {
+                  if (el) letterLine2Refs.current[i] = el;
+                }}
+                className="inline-block"
+                style={{ lineHeight: 1 }}
+              >
+                {char === ' ' ? '\u00A0' : char}
               </span>
             ))}
           </h1>
         </div>
 
-        {/* Subheading */}
-        <div className="relative z-10 flex justify-center w-full">
-          <div className="relative z-10 flex justify-center w-full">
-            <p
-              ref={paraRef}
-              className="relative text-xl sm:text-4xl font-bold tracking-wider text-outline-black-orange w-[90%] sm:w-2/3 text-center"
-            >
-              Because great food deserves more than just a star rating.
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Fixed burger image with proper sizing and quality settings */}
-      <div className="absolute bottom-0 sm:bottom-0 left-1/2 -translate-x-1/2 z-0 w-full md:w-[80%] max-w-[800px]">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-full md:w-[80%] max-w-[800px]">
         <Image
           src="/hero2.png"
           width={800}
           height={800}
           alt="Burger Man"
-          className="w-full h-[90vh]  object-contain object-bottom "
+          className="w-full h-[60vh] md:h-[90vh] object-contain object-bottom"
         />
       </div>
     </section>
