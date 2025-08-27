@@ -72,7 +72,7 @@ const About = () => {
       {/* Images with animations */}
       <motion.div className="relative flex gap-4" animate={imgControls}>
         {/* Glow behind images */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[120px] opacity-50 rounded-full" />
+        {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[120px] opacity-50 rounded-full" /> */}
 
         <motion.div variants={imgVariant}>
           <Image
@@ -110,10 +110,11 @@ const About = () => {
           className="absolute inset-0 pointer-events-none transition duration-300"
         />
 
-        <h3 className="text-5xl vodka-font  font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-600 bg-clip-text text-transparent">
+        <h3 className="text-5xl vodka-font  font-bold mb-4 bg-gradient-to-r 
+        text-black bg-clip-text ">
           About Us
         </h3>
-        <p className="text-zinc-300 leading-relaxed">
+        <p className="text-white leading-relaxed">
           At <span className="text-yellow-400 font-semibold">Foodie</span>, we
           believe every dish deserves more than just a star rating. Our app is
           built for true food lovers — helping you explore, review, and share

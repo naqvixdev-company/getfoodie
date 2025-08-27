@@ -9,7 +9,7 @@ import { FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footor = () => {
   return (
-    <footer className="relative bg-[#0d0d0d] text-white py-10 px-6 md:px-16 overflow-hidden">
+    <footer className="relative bg-orange-400 text-white py-10 px-6 md:px-16 overflow-hidden">
       {/* Bottom Right Radiant Glow */}
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[180px] opacity-30 -z-10" />
 
@@ -17,10 +17,10 @@ const Footor = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Section 1 - Brand + Social */}
         <div>
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-black">
             Foodie
           </h2>
-          <p className="mt-3 text-gray-400 text-sm">
+          <p className="mt-3 text-white text-sm">
             Your one-stop destination for delicious recipes, kitchen tips, and
             foodie inspiration.
           </p>
@@ -42,7 +42,7 @@ const Footor = () => {
         {/* Section 2 - Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-gray-400">
+          <ul className="space-y-2 text-white">
             {['Home', 'About', 'Why Us', 'Features'].map((link, idx) => (
               <li key={idx}>
                 <a
@@ -59,7 +59,7 @@ const Footor = () => {
         {/* Section 3 - Contact Info */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-          <ul className="space-y-3 text-gray-400">
+          <ul className="space-y-3 text-white">
             <li className="flex items-center gap-3">
               <FaMapMarkerAlt className="text-yellow-400" />
               <span>United State</span>
@@ -73,7 +73,7 @@ const Footor = () => {
       </div>
 
       {/* Footer Bottom Line */}
-      <div className="mt-10 border-t border-white/10 pt-5 text-center text-gray-500 text-sm">
+      <div className="mt-10 border-t border-black pt-5 text-center text-gray-900 text-sm">
         © {new Date().getFullYear() }
          {"   "}Foodie Media Group, Inc. 
       </div>

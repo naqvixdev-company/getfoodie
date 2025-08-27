@@ -47,7 +47,7 @@ const VideoSection = () => {
       {!hasInteracted && (
         <button
           onClick={handlePlayClick}
-          className="absolute inset-0 flex items-center justify-center bg-black/50 text-white text-2xl font-semibold rounded-lg"
+          className="absolute inset-0 flex items-center justify-center  text-white text-2xl font-semibold rounded-lg"
         >
           ▶ Play 
         </button>

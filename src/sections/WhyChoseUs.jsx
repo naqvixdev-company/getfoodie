@@ -392,7 +392,7 @@ const WhyUs = () => {
     >
       {/* Left Content */}
       <div className="flex flex-col gap-6 lg:w-1/2 why-text">
-        <h2 className="text-5xl vodka-font md:text-5xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-600 bg-clip-text text-transparent">
+        <h2 className="text-5xl vodka-font md:text-5xl font-bold text-black  bg-clip-text ">
           Why Foodies Choose Foodie
         </h2>
         <p className="text-lg text-gray-300">
@@ -406,9 +406,9 @@ const WhyUs = () => {
               ref={(el) => (cardsRef.current[i] = el)}
               className="p-5 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-yellow-400/70 transition-all duration-300 text-white overflow-hidden"
             >
-              <div className="mb-3 text-yellow-400">{reason.icon}</div>
+              <div className="mb-3 text-orange-400">{reason.icon}</div>
               <h3 className="font-semibold mb-1">{reason.title}</h3>
-              <p className="text-sm text-gray-300">{reason.desc}</p>
+              <p className="text-sm text-white">{reason.desc}</p>
             </div>
           ))}
         </div>
@@ -417,7 +417,7 @@ const WhyUs = () => {
       {/* Right Images */}
       <div className="relative flex items-center justify-center mt-10 lg:mt-0 lg:w-1/2 gap-10">
         {/* Glow behind images */}
-        <div className="absolute w-120 h-120 bg-yellow-400/30 blur-3xl rounded-full"></div>
+        {/* <div className="absolute w-120 h-120 bg-yellow-400/30 blur-3xl rounded-full"></div> */}
 
         <div
           ref={img1WrapperRef}
@@ -426,35 +426,6 @@ const WhyUs = () => {
           <VideoSection />
         </div>
 
-        {/* Left Image (higher) */}
-        {/* <div
-          ref={img1WrapperRef}
-          className="relative z-10 group transition-transform duration-300 will-change-transform cursor-pointer hover:scale-115"
-        >
-          <Image
-            src="/why3.png"
-            alt="App Screenshot 1"
-            width={220}
-            height={400}
-            className="rounded-2xl shadow-lg select-none pointer-events-none hover:scale-120"
-            draggable={false}
-          />
-        </div> */}
-
-        {/* Right Image (lower) */}
-        {/* <div
-          ref={img2WrapperRef}
-          className="relative z-20 group transition-transform duration-300 will-change-transform cursor-pointer hover:scale-115"
-        >
-          <Image
-            src="/why2.png"
-            alt="App Screenshot 2"
-            width={220}
-            height={400}
-            className="rounded-2xl shadow-lg select-none pointer-events-none"
-            draggable={false}
-          />
-        </div> */}
       </div>
     </section>
   );

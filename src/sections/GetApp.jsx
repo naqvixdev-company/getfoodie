@@ -45,7 +45,7 @@ const GetApp = () => {
     >
       <div className="md:w-[50%] w-full">
         <div className="flex flex-col w-full">
-          <h2 className="text-5xl vodka-font md:text-7xl text-center font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl vodka-font md:text-7xl text-center font-bold text-black">
             {displayText}
           </h2>
           <p className="text-center text-lg">

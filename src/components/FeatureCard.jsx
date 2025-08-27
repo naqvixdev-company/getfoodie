@@ -37,18 +37,18 @@ const FeatureCard = ({ heading, para }) => {
       onMouseLeave={handleMouseLeave}
     >
       {/* Glow layer */}
-      <div
+      {/* <div
         ref={glowRef}
         className="absolute inset-0 pointer-events-none transition duration-300"
-      />
+      /> */}
 
       {/* Heading with gradient */}
-      <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-orange-600 bg-clip-text text-transparent mb-3">
+      <h4 className="text-2xl font-bold text-black mb-3">
         {heading}
       </h4>
 
       {/* Description */}
-      <p className="text-zinc-300 leading-relaxed">{para}</p>
+      <p className="text-white leading-relaxed">{para}</p>
     </div>
   );
 };

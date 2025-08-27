@@ -98,17 +98,17 @@ const Hero = () => {
       {/* Center Content */}
       <div className="flex h-full justify-center mt-10 md:mt-20 flex-col items-center w-fit relative">
         {/* Glow behind heading - changed to yellow */}
-        <div
+        {/* <div
           ref={glowRef}
           className="absolute top-8 md:top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-1/2 
              w-[60vw] md:w-[40vw] h-[60vw] md:h-[40vw] bg-orange-400
              rounded-full blur-[150px] opacity-50 z-0"
-        />
+        /> */}
 
         {/* Heading container */}
         <div className="relative z-10 leading-none text-center">
           {/* First Line - changed to yellow */}
-          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-yellow-400 select-none flex justify-center">
+          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-black select-none flex justify-center">
             {headingLine1.split('').map((char, i) => (
               <span
                 key={`line1-${i}`}
@@ -124,7 +124,7 @@ const Hero = () => {
           </h1>
 
           {/* Second Line - changed to yellow */}
-          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-yellow-400 select-none -mt-2 md:-mt-4 flex justify-center">
+          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-black select-none -mt-2 md:-mt-4 flex justify-center">
             {headingLine2.split('').map((char, i) => (
               <span
                 key={`line2-${i}`}
