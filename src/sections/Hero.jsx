@@ -118,7 +118,7 @@ const Hero = () => {
         {/* Heading container */}
         <div className="relative z-10 leading-none text-center">
           {/* First Line - changed to yellow */}
-          <h1 className="text-[14vw] md:text-[8vw] lg:text-[9vw] vodka-font font-bold text-outline-yellow  text-black select-none flex justify-center">
+          <h1 className="text-[12vw] md:text-[8vw] lg:text-[9vw] vodka-font font-bold text-outline-yellow  text-black select-none flex justify-center">
             {headingLine1.split('').map((char, i) => (
               <span
                 key={`line1-${i}`}
@@ -134,7 +134,7 @@ const Hero = () => {
           </h1>
 
           {/* Second Line - changed to yellow */}
-          <h1 className="text-[14vw] md:text-[8vw] lg:text-[9vw] vodka-font font-bold text-outline-yellow text-black select-none -mt-2 md:-mt-4 flex justify-center">
+          <h1 className="text-[12vw] md:text-[8vw] lg:text-[9vw] vodka-font font-bold text-outline-yellow text-black select-none -mt-2 md:-mt-4 flex justify-center">
             {headingLine2.split('').map((char, i) => (
               <span
                 key={`line2-${i}`}
