@@ -67,12 +67,12 @@ const About = () => {
     <section
       ref={sectionRef}
       id="about"
-      className=" overflow-x-hidden  pt-20 pb-10 flex flex-col md:flex-row justify-center items-center w-full p-5 gap-10 relative"
+      className=" overflow-x-hidden text-black  pt-20 pb-10 flex flex-col md:flex-row justify-center items-center w-full p-5 gap-10 relative"
     >
       {/* Images with animations */}
       <motion.div className="relative flex gap-4" animate={imgControls}>
         {/* Glow behind images */}
-        {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[120px] opacity-50 rounded-full" /> */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[120px] opacity-70 rounded-full" />
 
         <motion.div variants={imgVariant}>
           <Image
@@ -98,7 +98,7 @@ const About = () => {
       {/* Text with tilt + glow */}
       <motion.div
         ref={cardRef}
-        className="relative max-w-lg p-3 sm:p-6 rounded-xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5"
+        className="relative max-w-lg p-3 sm:p-6 rounded-xl overflow-hidden border border-black backdrop-blur-sm bg-black/10"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         variants={textVariant}
@@ -114,7 +114,7 @@ const About = () => {
         text-black bg-clip-text ">
           About Us
         </h3>
-        <p className="text-white leading-relaxed">
+        <p className="text-black leading-relaxed">
           At <span className="text-yellow-400 font-semibold">Foodie</span>, we
           believe every dish deserves more than just a star rating. Our app is
           built for true food lovers — helping you explore, review, and share

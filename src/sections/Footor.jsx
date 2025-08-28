@@ -9,7 +9,7 @@ import { FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footor = () => {
   return (
-    <footer className="relative bg-orange-400 text-white py-10 px-6 md:px-16 overflow-hidden">
+    <footer className="relative bg-amber-400 text-white py-10 px-6 md:px-16 overflow-hidden">
       {/* Bottom Right Radiant Glow */}
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[180px] opacity-30 -z-10" />
 
@@ -61,11 +61,11 @@ const Footor = () => {
           <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-3 text-white">
             <li className="flex items-center gap-3">
-              <FaMapMarkerAlt className="text-yellow-400" />
+              <FaMapMarkerAlt className="text-orange-400" />
               <span>United State</span>
             </li>
             <li className="flex items-center gap-3">
-              <FaEnvelope className="text-yellow-400" />
+              <FaEnvelope className="text-orange-400" />
               <span>contact@foodie.io</span>
             </li>
           </ul>

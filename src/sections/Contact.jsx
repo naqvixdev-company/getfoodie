@@ -34,14 +34,14 @@ const Contact = () => {
       className="relative w-screen flex flex-col items-center md:mt-30 py-10 overflow-hidden"
     >
       {/* Left Bottom Radiant Glow for Section */}
-      {/* <motion.div
+      <motion.div
         className="absolute bottom-0 left-0 -z-10"
         variants={glowVariant}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
         <div className="w-[500px] h-[500px] bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[180px] rounded-full" />
-      </motion.div> */}
+      </motion.div>
 
       {/* Heading */}
       <motion.div
@@ -53,7 +53,7 @@ const Contact = () => {
         <h2 className="text-5xl vodka-font md:text-7xl text-center font-bold text-black">
           Get in Touch
         </h2>
-        <p className="text-center text-xl text-zinc-100">
+        <p className="text-center text-xl text-zinc-900">
           Have a question or collaboration in mind? Let’s talk. Starts here.
         </p>
       </motion.div>
@@ -76,7 +76,7 @@ const Contact = () => {
             placeholder="Name:"
             onFocus={() => handleFocus("name")}
             onBlur={handleBlur}
-            className="p-4 border border-white/20 outline-none w-full bg-white/5 backdrop-blur-sm text-white rounded-md"
+            className="p-4 border border-black/20 outline-none w-full bg-black/10  backdrop-blur-sm text-black rounded-md"
           />
         </motion.div>
 
@@ -96,7 +96,7 @@ const Contact = () => {
             placeholder="Email:"
             onFocus={() => handleFocus("email")}
             onBlur={handleBlur}
-            className="p-4 border border-white/20 outline-none w-full bg-white/5 backdrop-blur-sm text-white rounded-md"
+            className="p-4 border border-black/20 outline-none w-full bg-black/10 backdrop-blur-sm text-black rounded-md"
           />
         </motion.div>
 
@@ -115,7 +115,7 @@ const Contact = () => {
             placeholder="Message or any suggestion ..."
             onFocus={() => handleFocus("message")}
             onBlur={handleBlur}
-            className="p-4 h-[200px] border border-white/20 outline-none w-full bg-white/5 backdrop-blur-sm text-white rounded-md"
+            className="p-4 h-[200px] border border-black/20 outline-none w-full bg-black/10 backdrop-blur-sm text-black rounded-md"
           />
         </motion.div>
 

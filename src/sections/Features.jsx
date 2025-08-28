@@ -15,7 +15,7 @@ const Features = () => {
           Everything You Need to Share, Explore, and Connect
         </p>
       </div>
-      <div className="w-full flex flex-col ">
+      <div className="w-full flex flex-col text-black">
         <div className="w-full px-5mb-5  lg:mb-10 pt-10 lg:pt-10  flex-col lg:flex-row flex items-center justify-evenly">
           <FeatureCard
             heading={'Seamless Video Upload & Editing'}

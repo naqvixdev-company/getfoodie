@@ -18,12 +18,7 @@ html {
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #f59e0b,   /* amber-500 */
-    #fbbf24,   /* amber-400 */
-    #d97706    /* amber-600 (for darker contrast) */
-  );
+   background-color: white;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;

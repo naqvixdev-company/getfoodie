@@ -41,7 +41,7 @@ const GetApp = () => {
   return (
     <section
       id="app"
-      className="w-[90%] m-auto flex md:flex-row flex-col gap-10 items-center justify-evenly mt-30"
+      className="w-[90%] bg-amber-300 m-auto flex md:flex-row flex-col gap-10 items-center justify-evenly py-20 rounded-xl"
     >
       <div className="md:w-[50%] w-full">
         <div className="flex flex-col w-full">

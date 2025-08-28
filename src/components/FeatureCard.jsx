@@ -32,15 +32,15 @@ const FeatureCard = ({ heading, para }) => {
   return (
     <div
       ref={cardRef}
-      className="relative max-w-lg p-6 rounded-xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 transition-transform duration-300"
+      className="relative max-w-lg p-6 rounded-xl overflow-hidden border border-black/20 backdrop-blur-sm bg-black/10 transition-transform duration-300"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {/* Glow layer */}
-      {/* <div
+      <div
         ref={glowRef}
         className="absolute inset-0 pointer-events-none transition duration-300"
-      /> */}
+      />
 
       {/* Heading with gradient */}
       <h4 className="text-2xl font-bold text-black mb-3">
@@ -48,7 +48,7 @@ const FeatureCard = ({ heading, para }) => {
       </h4>
 
       {/* Description */}
-      <p className="text-white leading-relaxed">{para}</p>
+      <p className="text-gray-900 leading-relaxed">{para}</p>
     </div>
   );
 };

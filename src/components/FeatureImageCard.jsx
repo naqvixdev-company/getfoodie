@@ -6,7 +6,7 @@ const FeatureImageCard = ({ img1, img2, alt1 = "Image 1", alt2 = "Image 2" }) =>
   return (
     <div className="relative flex gap-4 justify-center items-center">
       {/* Gradient Glow Behind Images */}
-      {/* <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[120px] opacity-50 rounded-full" /> */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 blur-[120px] opacity-70 rounded-full" />
 
       {/* First Image - slightly lower */}
       <div className="transform translate-y-4 hover:scale-105 transition duration-300">

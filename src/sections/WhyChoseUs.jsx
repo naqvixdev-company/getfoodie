@@ -388,14 +388,14 @@ const WhyUs = () => {
     <section
       id="why-us"
       ref={sectionRef}
-      className="w-full   overflow-x-hidden   flex flex-col lg:flex-row items-center justify-between gap-10 px-6 md:px-16 py-10"
+      className="w-full bg-amber-300 rounded-2xl   overflow-x-hidden   flex flex-col lg:flex-row items-center justify-between gap-10 px-6 md:px-16 py-10"
     >
       {/* Left Content */}
       <div className="flex flex-col gap-6 lg:w-1/2 why-text">
         <h2 className="text-5xl vodka-font md:text-5xl font-bold text-black  bg-clip-text ">
           Why Foodies Choose Foodie
         </h2>
-        <p className="text-lg text-gray-300">
+        <p className="text-lg text-gray-900">
           Discover, rate, and share meals you’ll never forget.
         </p>
 
@@ -404,7 +404,7 @@ const WhyUs = () => {
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className="p-5 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-yellow-400/70 transition-all duration-300 text-white overflow-hidden"
+              className="p-5 rounded-xl bg-black/10 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-yellow-400/70 transition-all duration-300 text-white overflow-hidden"
             >
               <div className="mb-3 text-orange-400">{reason.icon}</div>
               <h3 className="font-semibold mb-1">{reason.title}</h3>

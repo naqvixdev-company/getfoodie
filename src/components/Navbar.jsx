@@ -50,14 +50,14 @@ const Navbar = () => {
       className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[100px] sm:w-[300px] md:w-[70%] lg:w-[90%] max-w-4xl"
     >
       {/* Desktop Navbar */}
-      <div className="hidden md:flex justify-center backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-3 shadow-lg gap-6">
+      <div className="hidden text-black md:flex justify-center backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-3 shadow-lg gap-6">
         {navItems.map((item) => (
           <motion.a
             key={item.id}
             href={`#${item.id}`}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className={`relative text-white transition-all duration-300 ${
+            className={`relative text-black transition-all duration-300 ${
               activeSection === item.id
                 ? "after:absolute after:bottom-[-4px] after:left-1/2 after:-translate-x-1/2 after:w-full after:h-[2px] after:bg-white after:rounded-full after:shadow-[0_0_10px_3px_rgba(255,255,255,0.8)] after:animate-pulse"
                 : "opacity-70 hover:opacity-100"
