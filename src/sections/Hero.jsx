@@ -100,11 +100,9 @@ const Hero = () => {
   return (
     <section className="w-screen bg-amber-300 h-[70vh] md:h-screen flex flex-col items-center relative overflow-hidden">
       {/* Top bar */}
-      <div className="flex w-full justify-between items-center p-4">
+      <div className="flex w-full justify-start items-center p-4">
         <Image src="/logo.png" width={70} height={70} alt="logo" />
-        <button className="px-5 py-2 bg-white rounded-full text-black text-sx">
-          Try Free
-        </button>
+
       </div>
 
       {/* Center Content */}
