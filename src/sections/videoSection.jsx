@@ -31,11 +31,11 @@ const VideoSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative max-w-7xl mx-auto py-20 flex items-center justify-center"
+      className="relative max-w-7xl  mx-auto py-20 flex items-center justify-center"
     >
       <video
         ref={videoRef}
-        className="w-full h-auto sm:h-[100vh] sm:w-[350px] object-cover rounded-lg shadow-4xl"
+        className="w-full h-full  sm:w-[350px] border object-cover rounded-lg shadow-4xl"
         playsInline
         preload="metadata"
         controls={false}

@@ -1,4 +1,4 @@
-"use client"
+'use client';
 // import Image from 'next.js/image';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -15,16 +15,28 @@ const Hero = () => {
 
   useEffect(() => {
     // Ensure refs arrays have correct length
-    letterLine1Refs.current = letterLine1Refs.current.slice(0, headingLine1.length);
-    letterLine2Refs.current = letterLine2Refs.current.slice(0, headingLine2.length);
+    letterLine1Refs.current = letterLine1Refs.current.slice(
+      0,
+      headingLine1.length
+    );
+    letterLine2Refs.current = letterLine2Refs.current.slice(
+      0,
+      headingLine2.length
+    );
 
     // Filter out null refs to avoid GSAP errors
-    const validLine1Refs = letterLine1Refs.current.filter(ref => ref !== null);
-    const validLine2Refs = letterLine2Refs.current.filter(ref => ref !== null);
+    const validLine1Refs = letterLine1Refs.current.filter(
+      (ref) => ref !== null
+    );
+    const validLine2Refs = letterLine2Refs.current.filter(
+      (ref) => ref !== null
+    );
 
     // Only proceed if we have valid refs
     if (validLine1Refs.length === 0 || validLine2Refs.length === 0) {
-      console.warn('Some letter refs are null, animation may not work properly');
+      console.warn(
+        'Some letter refs are null, animation may not work properly'
+      );
       return;
     }
 
@@ -32,11 +44,11 @@ const Hero = () => {
     if (glowRef.current) {
       gsap.set(glowRef.current, { opacity: 0, scale: 0.85 });
     }
-    
+
     if (paraRef.current) {
       gsap.set(paraRef.current, { opacity: 0, y: 24 });
     }
-    
+
     // Hide all letters initially
     gsap.set([...validLine1Refs, ...validLine2Refs], {
       opacity: 0,
@@ -108,7 +120,7 @@ const Hero = () => {
         {/* Heading container */}
         <div className="relative z-10 leading-none text-center">
           {/* First Line - changed to yellow */}
-          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-black select-none flex justify-center">
+          <h1 className="text-[15vw] md:text-[8vw] lg:text-[9vw] vodka-font font-bold text-outline-yellow  text-black select-none flex justify-center">
             {headingLine1.split('').map((char, i) => (
               <span
                 key={`line1-${i}`}
@@ -124,7 +136,7 @@ const Hero = () => {
           </h1>
 
           {/* Second Line - changed to yellow */}
-          <h1 className="text-[15vw] md:text-[8vw] lg:text-[7vw] vodka-font font-bold text-black select-none -mt-2 md:-mt-4 flex justify-center">
+          <h1 className="text-[15vw] md:text-[8vw] lg:text-[9vw] vodka-font font-bold text-outline-yellow text-black select-none -mt-2 md:-mt-4 flex justify-center">
             {headingLine2.split('').map((char, i) => (
               <span
                 key={`line2-${i}`}
@@ -139,7 +151,6 @@ const Hero = () => {
             ))}
           </h1>
         </div>
-
       </div>
 
       {/* Fixed burger image with proper sizing and quality settings */}
